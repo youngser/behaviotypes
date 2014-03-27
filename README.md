@@ -1,4 +1,4 @@
-## Reproducing the figures in "Discovery of Brainwide Neural-Behavioral Maps via Multiscale Unsupervised Structure Learning" in Science (March 27, 2014) issue.
+### Reproducing the figures in "Discovery of Brainwide Neural-Behavioral Maps via Multiscale Unsupervised Structure Learning" in Science (March 27, 2014) issue.
    
 All the plots in the paper were generated with R.
 The latest R can be downloaded from [CRAN](http://cran.us.r-project.org).
