@@ -19,3 +19,10 @@ heatmaps, etc.
 
 This code has been tested on Mac and Linux
 environments. Unfortunately, it was not tested on Windows machines.
+
+Update:
+Now, the Iterative Denoising Tree code is added, the main learning algorithm used in the manuscript. You can test is by
+```
+> source("doidt.r")
+> testIDT()
+```
