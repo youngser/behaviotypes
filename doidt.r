@@ -1,6 +1,6 @@
 ## Author: youngser@jhu.edu
 ## Version: $Id: doidt.r,v 0.1 2012/02/30 20:55:01 parky Exp$
-## Time-stamp: <Thu Sep 15, 2016 10:50:45 YP>
+## Time-stamp: <Wed Oct 26, 2016 08:52:32 YP>
 #####################################################################################
 ## Copyright 2014 Youngser Park
 ##
@@ -242,8 +242,9 @@ dobranch <- function(feat, depth, FUN="mclust",prev="", maxsamp=maxsamp,
 ## test function
 testIDT <- function()
 {
-    FUN <- "mclust"
-#    FUN <- "pamk"
+#    FUN <- "mclust"
+#    FUN <- "kmeans2"
+    FUN <- "pamk"
 
     ## install necessary packages
     required_packages  <- c("igraph","mclust","fpc")
@@ -253,7 +254,7 @@ testIDT <- function()
     lab <- iris[,5]
 
     out <- doIDT(as.matrix(dat),
-#                 FUN=FUN,
+                 FUN=FUN,
                  Dmax=3, ## max dim for clustering
                  Kmax=3,  ## max K for clustering
                  maxsamp=nrow(dat), ## max n for clustering
