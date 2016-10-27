@@ -1,6 +1,6 @@
 ## Author: youngser@jhu.edu
 ## Version: $Id: doidt.r,v 0.1 2012/02/30 20:55:01 parky Exp$
-## Time-stamp: <Wed Oct 26, 2016 16:50:36 YP>
+## Time-stamp: <Thu Oct 27, 2016 08:13:51 YP>
 #####################################################################################
 ## Copyright 2014 Youngser Park
 ##
@@ -242,9 +242,9 @@ dobranch <- function(feat, depth, FUN="mclust",prev="", maxsamp=maxsamp,
 ## test function
 testIDT <- function()
 {
-#    FUN <- "mclust"
+    FUN <- "mclust"
 #    FUN <- "kmeans2"
-    FUN <- "pamk"
+#    FUN <- "pamk"
 
     ## install necessary packages
     required_packages  <- c("igraph","mclust","fpc")
@@ -307,21 +307,6 @@ testIDT <- function()
     cat("\n ARI = ", adjustedRandIndex(mout$class,lab),"\n")
 #[1] 0.5681159
 
-    ## plot it
-    idtall <- out$idtall
-    leaves <- which(sapply(idtall, function(x) x$isLeaf))
-    (nleaves <- G <- length(leaves))
-    dend <- makeDendrogram(idtall)
-    plot(dend)
-    depth <- 2
-    nanimdepth <- sapply(1:depth, function(z) sapply(idtall[sapply(idtall, function(y) y$depth==z)],
-                                                     function(x) length(x$ids)))
-
-#    nanimdepth <- lapply(2^c(0:depth), function(x) as.numeric(table(getLabels(idtall,dend,x))))
-#    twotree <- splitTree(nanimdepth,depth)
-
-
-    
 }
 
 getElbows <- function(dat, n = 3, threshold = FALSE, plot = TRUE, main="") {
